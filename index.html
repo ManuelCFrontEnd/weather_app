@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vibe Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="search-container">
+          <i class="fa-solid fa-location-dot location-icon"></i>
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Search city..."
+            autocomplete="off"
+          />
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </header>
+
+      <main id="weather-content" class="hidden">
+        <section class="current-weather">
+          <div class="weather-main">
+            <h1 id="city-name">City Name</h1>
+            <p id="current-date">Monday, 12 Oct</p>
+            <div class="temp-container">
+              <span id="temperature">--</span>
+              <span class="unit">°C</span>
+            </div>
+            <p id="weather-desc">Sunny</p>
+          </div>
+          <div class="weather-details">
+            <div class="detail-item">
+              <i class="fa-solid fa-wind"></i>
+              <div>
+                <p class="label">Wind</p>
+                <p class="value" id="wind-speed">-- km/h</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-droplet"></i>
+              <div>
+                <p class="label">Humidity</p>
+                <p class="value" id="humidity">--%</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-eye"></i>
+              <div>
+                <p class="label">Visibility</p>
+                <p class="value" id="visibility">-- km</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="forecast-section">
+          <h2>7-Day Forecast</h2>
+          <div class="forecast-grid" id="forecast-grid">
+            <!-- Forecast items will be injected here -->
+          </div>
+        </section>
+      </main>
+
+      <div id="loading-spinner" class="hidden">
+        <div class="spinner"></div>
+      </div>
+
+      <div id="error-message" class="hidden">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <p>City not found. Please try again.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
